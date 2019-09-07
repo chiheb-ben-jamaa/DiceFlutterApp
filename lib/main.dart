@@ -54,7 +54,13 @@ class _diceState extends State<dicepage> {
               padding: const EdgeInsets.all(1.0),
               child: FlatButton(
                 child: Image.asset('images/dice$rightdicenumber.png'),
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    leftdicenumber = Random().nextInt(6)+1;
+                    rightdicenumber = Random().nextInt(6)+1;
+                    _toast(context);
+                  });
+                },
               ),
             ),
           ), //Expanded end of the seconde element :
